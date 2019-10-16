@@ -242,6 +242,16 @@ fi
 : "${COMPOSE_FILE_B_OUT:=docker-compose.zone-b.yml}"
 : "${COMPOSE_FILE_COMMON_OUT:=docker-compose.common.yml}"
 
+set -a
+FUSION_BASE_VERSION=2.14.1.3
+FUSION_IMAGE_RELEASE=1
+FUSION_NN_PROXY_VERSION="4.0.0.3"
+FUSION_LIVEHIVE_VERSION="4.0.1.0"
+FUSION_NN_PROXY_IMAGE_RELEASE=1
+FUSION_LIVEHIVE_PROXY_IMAGE_RELEASE=1
+FUSION_ONEUI_VERSION=2.14.1.0
+set +a
+
 # run everything below in a subshell to avoid leaking env vars
 (
   # common environment setup
@@ -362,4 +372,3 @@ fi
   echo "Once Fusion starts the UI will be available on:"
   echo "  http://${DOCKER_HOSTNAME}:${ONEUI_SERVER_PORT}"
 )
-
