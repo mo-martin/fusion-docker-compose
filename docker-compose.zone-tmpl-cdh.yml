@@ -68,6 +68,19 @@ services:
     volumes:
       - logging-livehive-${ZONE_NAME}:/var/log/fusion
 
+  # LiveHive
+  fusion-livehive-proxy-${ZONE_NAME}:
+    image: wandisco/fusion-livehive-proxy-cdh:${FUSION_LIVEHIVE_VERSION}
+    #-${FUSION_LIVEHIVE_PROXY_IMAGE_RELEASE}
+    networks:
+      - fusion
+    env_file:
+      - "${ZONE_ENV}"
+    ports:
+      - ${FUSION_LIVEHIVE_PROXY_PORT}:${FUSION_LIVEHIVE_PROXY_PORT}
+    volumes:
+      - logging-livehive-${ZONE_NAME}:/var/log/fusion
+
   # Fusion UI Server
   fusion-ui-server-${ZONE_NAME}:
     image: wandisco/fusion-ui-server-cdh:${FUSION_BASE_VERSION}-${FUSION_IMAGE_RELEASE}
