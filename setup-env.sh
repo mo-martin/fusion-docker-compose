@@ -219,6 +219,7 @@ validate_zone_type() {
     cdh|hdp)         return 0;;
     alibaba-emr)     return 0;;
     localfs)         return 0;;
+    asf)             return 0;;
   esac
   # for anything not matched by the above case, validation failed
   echo "Please choose from one of the following zone types:"
@@ -231,6 +232,7 @@ cdh:         Cloudera Hadoop
 hdp:         Hadoop
 alibaba-emr: Alibaba EMR
 localfs:     Local filesystem
+asf:         Apache Software Foundation Hadoop
 EOZONE
   return 1
 }
