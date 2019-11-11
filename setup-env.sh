@@ -218,6 +218,7 @@ validate_zone_type() {
     s3|hcfs-emr)     return 0;;
     cdh|hdp)         return 0;;
     alibaba-emr)     return 0;;
+    localfs)         return 0;;
   esac
   # for anything not matched by the above case, validation failed
   echo "Please choose from one of the following zone types:"
@@ -229,6 +230,7 @@ hcfs-emr:    AWS HCFS EMR
 cdh:         Cloudera Hadoop
 hdp:         Hadoop
 alibaba-emr: Alibaba EMR
+localfs:     Local filesystem
 EOZONE
   return 1
 }
