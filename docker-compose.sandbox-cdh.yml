@@ -11,16 +11,15 @@
 #
 ################################################################################
 #
-# This docker-compose.yml file will bring up an HDP sandbox cluster
+# This docker-compose.yml file will bring up an cdh sandbox cluster
 
 version: "3.7"
 
 services:
-  sandbox-hdp:
-    image: wandisco/sandbox-cdh
+  sandbox-cdh:
+    image: wandisco/sandbox-cdh:2.15.2.1
     privileged: true
     command: ["/sbin/init"]
-    env_file: sandbox.env
     ports:
       - "7180:7180"
       - "7183:7183"
@@ -34,7 +33,3 @@ services:
       nofile:
         soft: 170000
         hard: 190000
-
-  fusion-server-sandbox-cdh:
-    depends_on:
-      - sandbox-cdh
