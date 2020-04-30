@@ -1,11 +1,5 @@
 .DS_Store
-docker-compose.*.yml
 test.sh
 test.tpl
-*.env
-!docker-compose.common-tmpl.yml
-!docker-compose.zone-tmpl*.yml
-!docker-compose.plugin-tmpl*.yml
-!docker-compose.induction-tmpl.yml
 [._]*.sw[a-p]
 *.sh_history
