@@ -107,7 +107,7 @@ services:
       - fusion-server-cdh-sandbox
     networks:
       - fusion
-    hostname: "cdh-adls2"
+    hostname: "sandbox-cdh"
     ports:
       - "2022:22"
       - "8670:8670"
@@ -136,7 +136,7 @@ services:
       - DB_ACTION=
     env_file:
       - "zone_a.env"
-    depends_on: 
+    depends_on:
       - fusion-oneui-server
     volumes:
       - logging-cdh-sandbox:/var/log/fusion

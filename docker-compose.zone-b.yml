@@ -92,7 +92,7 @@ services:
       - DB_ACTION=
     env_file:
       - "zone_b.env"
-    depends_on:  
+    depends_on:
       - fusion-oneui-server
     volumes:
       - logging-adls2:/var/log/fusion

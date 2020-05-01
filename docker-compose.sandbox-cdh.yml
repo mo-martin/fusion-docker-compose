@@ -23,8 +23,8 @@ services:
     ports:
       - "7180:7180"
       - "7183:7183"
-      - "8020:8020"
       - "50010:50010"
+      - "50070:50070"
     networks:
       - fusion
     hostname: sandbox-cdh
